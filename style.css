@@ -1,0 +1,222 @@
+
+    :root {
+      --marrom-cafe: #a06c3f;
+      --verde-oliva: #778c43;
+      --creme: #fdf6f0;
+      --marrom: #5e220c;
+      --verde-claro: #dcebb793;
+      --texto: #2e1e18;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      background-color: var(--verde-claro);
+      font-family: 'Lato', sans-serif;
+      color: var(--texto);
+      min-height: 100vh;
+    }
+
+    /* ── HERO ── */
+    .hero { /* topo da página, cores de fundo */
+      background: linear-gradient(135deg, #e6ba78 0%, #e2caa5 60%, #a9ce7a 100%);
+      padding: 4rem 1rem 3rem;
+      text-align: center;
+      border-bottom: 1px solid var(--marrom-cafe);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before { /* cores background topo da pagina circulos */
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.45) 0%, transparent 55%),
+                        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.45) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .hero h1 { /* atributos do texto do cabeçalho */
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 6vw, 3.8rem);
+      color: var(--marrom);
+      margin-bottom: 0.4rem;
+      position: relative;
+    }
+    .hero h1 em { /* atributos secundários do cabeçalho */
+      color: var(--verde-oliva);
+      font-style: italic;
+    }
+    .hero p.lead { /* linha menor do cabeçalho */
+      font-weight: 300;
+      font-size: 1.5rem;
+      color: #1b5519;
+      position: relative;
+      font-style: italic;
+    }
+    .divider { /*tracinho embaixo do nome*/
+      width: 60px;
+      height: 2px;
+      background: var(--verde-oliva);
+      margin: 1rem auto;
+      border-radius: 2px;
+    }
+
+    /* ── CARD FORM ── */
+    .form-card { /* formulário */
+      background: #fff;
+      border-radius: 18px;
+      border: 1px solid #f0e8dd;
+      box-shadow: 0 8px 40px rgba(156, 196, 104, 0.08);
+      padding: 2.5rem;
+      margin-top: -1.5rem;
+      position: relative;
+    }
+
+    .section-title { /* titulo do formulário */
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: var(--verde-oliva);
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #f3e9e0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section-icon { /* circulo no fundo dos icones */
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #cde58e,var(--creme));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* ── FORM ELEMENTS ── */
+    .form-label { /* texo dos campos*/
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #9c8260;
+      margin-bottom: 0.3rem;
+    }
+    .form-control, .form-select { /* bordas dos campos */
+      border: 1.5px solid #eed6b8;
+      border-radius: 10px;
+      padding: 0.6rem 0.9rem;
+      font-size: 0.95rem;
+      color: var(--texto);
+      background-color: #fffefb;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-control:focus, .form-select:focus { /*cor da borda do campo selecionado*/
+      border-color: var(--verde-oliva);
+      box-shadow: 0 0 0 3px rgba(191, 231, 200, 0.12);
+      outline: none;
+      background-color: #fff;
+    }
+    /* ── UPLOAD AREA ── */
+    .upload-area {/* config imagens referencia da encomenda*/
+      border: 2px dashed #eed6b8;
+      border-radius: 12px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      cursor: pointer;
+      background: #fffdfb;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .upload-area:hover {
+      border-color: var(--verde-oliva);
+      background: #fffdfb;
+    }
+    .upload-area.has-files {
+      border-style: solid;
+      border-color: var(--verde-oliva);
+      background: #fffdfb;
+      padding: 1rem;
+    }
+    .preview-img-wrap {
+      position: relative;
+      display: inline-block;
+    }
+    .preview-img-wrap img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1.5px solid #fffdfb;
+      display: block;
+    }
+    .preview-img-wrap .remove-btn {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--verde-oliva);
+      color: #fff;
+      border: none;
+      font-size: 13px;
+      line-height: 22px;
+      text-align: center;
+      cursor: pointer;
+      padding: 0;
+    }
+    /* ── BOLO SUMMARY ── */
+    #resumo-bolo { /* config resumo*/
+      background: linear-gradient(135deg, #fff9f0, #fff8f2);
+      border: 1.5px dashed #eed6b8;
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      font-size: 0.93rem;
+      color: #993c11;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      font-style: italic;
+    }
+
+    /* ── SUBMIT BUTTON ── */
+    .btn-encomendar { /*config do botão*/
+      background: linear-gradient(135deg, #e6ba78, var(--verde-oliva));
+      border: none;
+      border-radius: 50px;
+      color: var(--texto);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      padding: 0.85rem 2.5rem;
+      width: 100%;
+      transition: transform 0.15s, box-shadow 0.15s, filter 0.15s;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+    }
+    .btn-encomendar:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(146, 196, 104, 0.35);
+      filter: brightness(1.05);
+      color: #fff;
+    }
+    .btn-encomendar:active {
+      transform: translateY(0);
+    }
+    .btn-encomendar svg {
+      margin-right: 8px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.82rem;
+      color: #b89090;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 576px) {
+      .form-card { padding: 1.5rem 1.2rem; }
+    }
