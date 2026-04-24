@@ -220,3 +220,58 @@
     @media (max-width: 576px) {
       .form-card { padding: 1.5rem 1.2rem; }
     }
+    /* ── PREÇO ── */
+    #resumo-preco {
+      margin-top: 0.8rem;
+    }
+    .preco-lista {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0.6rem 0;
+      border: 1.5px solid #eed6b8;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .preco-lista li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.88rem;
+      border-bottom: 1px solid #f5e8d8;
+      gap: 1rem;
+    }
+    .preco-lista li:last-child {
+      border-bottom: none;
+    }
+    .preco-lista li:nth-child(even) {
+      background: #fffaf5;
+    }
+    .preco-item-label {
+      color: #5e3a20;
+      flex: 1;
+    }
+    .preco-item-val {
+      font-weight: 700;
+      color: var(--verde-oliva);
+      white-space: nowrap;
+    }
+    .preco-orcamento {
+      color: #a06c3f;
+      font-style: italic;
+      font-weight: 400;
+    }
+    .preco-total {
+      background: linear-gradient(135deg, #e6ba78, #c8dc8a);
+      border-radius: 10px;
+      padding: 0.65rem 1rem;
+      font-size: 1rem;
+      color: var(--marrom);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .preco-total strong {
+      font-size: 1.15rem;
+    }
